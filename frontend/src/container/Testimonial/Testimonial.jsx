@@ -58,7 +58,7 @@ const Testimonial = () => {
           </div>
         </>
       )}
-
+      <h2 className='head-text'>Engaged with</h2>
       <div className='app__testimonials-brands app__flex'>
         {brands.map((brand) => (
           <motion.div
