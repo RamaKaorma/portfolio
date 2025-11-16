@@ -42,7 +42,7 @@ const Work = () => {
       <h2 className='head-text'>My <span>Portfolio*</span></h2>
       <h5 style={{textAlign: 'center', color: '#6b7688'}}>*Please visit GitHub for full acknowledgement of contributors.</h5>
       <div className='app__work-filter'>
-        {['Web', 'University', 'Workshops', 'Other', 'All'].map((item, index) => (
+        {['Web', 'University', 'Workshops', 'Articles', 'Other', 'All'].map((item, index) => (
           <div 
           key={index}
           onClick={() => handleWorkFilter(item)}
