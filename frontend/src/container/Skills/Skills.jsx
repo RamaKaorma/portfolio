@@ -55,7 +55,7 @@ const Skills = () => {
           ))}
         </motion.div>
 
-        <motion.div className='app__skills-exp app__exp-resume' key={workExperience}>
+        <motion.div className='app__skills-exp app__exp-resume' key={experience}>
             <button onClick={downloadResume} className='app__exp-resume'>
               Download Resume
             </button>
