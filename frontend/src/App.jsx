@@ -1,5 +1,5 @@
 import { Navbar } from './components';
-import { About, Footer, Header, Skills, Testimonial, Work, Award } from './container';
+import { About, Footer, Header, Skills, Testimonial, Work, Award, Graphics } from './container';
 import './App.scss';
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
       <Skills />
       <Testimonial />
       <Award />
+      <Graphics />
       <Footer />
     </div>
   );

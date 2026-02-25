@@ -32,7 +32,7 @@ const Header = () => {
             </div>
           </div>
           <div className='tag-cmp app__flex'>
-              <p className='p-text'>Web Developer</p>
+              <p className='p-text'>Consultant</p>
               <p className='p-text'>Public Speaker</p>
           </div>
         </div>
@@ -60,7 +60,7 @@ const Header = () => {
       >
         {/* Floating bubbels with skills behind main image */}
         {[images.java, images.python, images.react].map((circle, index) => (
-          <div className='circle-cmp app__flex' key={'circle-index'}>
+          <div className='circle-cmp app__flex' key={`circle-${index}`}>
             <img src={circle} alt="circle" />
           </div>
         ))}

@@ -6,14 +6,15 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import { Tooltip } from 'react-tooltip';
 import './Skills.scss';
+import { workExperience } from '../../../../backend/schemaTypes/workExperience';
 
 
 const Skills = () => {
-  const [experience, setExperience] = useState([]);
+  const [experience, setExperience] = useState('');
   const [skills, setSkill] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "experiences"]';
+    const query = '*[_type == "workExperience"][0].file.asset->url';
     const skillsQuery = '*[_type == "skills"]';
   
     client.fetch(query)
@@ -27,6 +28,12 @@ const Skills = () => {
     });
   }, []);
 
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = experience;
+    link.download = "Rama-Kaorma.pdf";
+    link.click();
+  };
 
   return (
     <>
@@ -39,7 +46,7 @@ const Skills = () => {
               whileInView={{opacity: [0,1]}}
               transition={{duration: 0.5}}
               className='app__skills-item app__flex'
-              key={skills.name}
+              key={skill.name}
             >
               <div className='app__flex' style={{backgroundColor: skill.bgColor}}>
                 <img src={urlFor(skill.icon)} alt={skill.name} />
@@ -49,12 +56,10 @@ const Skills = () => {
           ))}
         </motion.div>
 
-        <motion.div className='app__skills-exp'>
-          <motion.div className='app__exp-resume'>
-            <a href="../../../Rama-Kaorma.pdf" download='RamaKaorma.pdf'>
-              Download Full Resume
-            </a>
-          </motion.div>
+        <motion.div className='app__skills-exp app__exp-resume' key={workExperience}>
+            <button onClick={downloadResume} className='app__exp-resume'>
+              Download Resume
+            </button>
         </motion.div>
       </div>
     </>

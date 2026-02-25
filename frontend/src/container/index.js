@@ -5,3 +5,4 @@ export { default as Skills } from './Skills/Skills';
 export { default as Testimonial } from './Testimonial/Testimonial';
 export { default as Work } from './Work/Work';
 export { default as Award } from './Award/Awards';
+export { default as Graphics } from './Graphics/Graphics';
