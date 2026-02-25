@@ -6,7 +6,6 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import { Tooltip } from 'react-tooltip';
 import './Skills.scss';
-import { workExperience } from '../../../../backend/schemaTypes/workExperience';
 
 
 const Skills = () => {
